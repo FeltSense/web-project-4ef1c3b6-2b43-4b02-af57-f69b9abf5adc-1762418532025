@@ -1,0 +1,85 @@
+{
+  "componentsToGenerate": [
+    "Navigation",
+    "Hero",
+    "FeaturedServices",
+    "CaseStudyCarousel",
+    "ClientLogos",
+    "TeamPreview",
+    "StatsCounter",
+    "CTASection",
+    "AboutHero",
+    "CompanyStory",
+    "TeamProfiles",
+    "TechnologyStack",
+    "ServicesHero",
+    "ServiceCards",
+    "ProcessSection",
+    "PricingSection",
+    "PortfolioHero",
+    "CaseStudyGrid",
+    "CaseStudyCard",
+    "TestimonialSection",
+    "ContactForm",
+    "Footer"
+  ],
+  "estimatedChallenges": [
+    {
+      "component": "Navigation",
+      "challenge": "Sticky navigation with active page highlighting and mobile menu toggle",
+      "mitigation": "Use useState for mobile menu state, useEffect for scroll detection, conditional classes for active states"
+    },
+    {
+      "component": "CaseStudyCarousel",
+      "challenge": "Smooth carousel with auto-play and manual controls",
+      "mitigation": "Use useState for current slide index, useEffect for auto-advance timer, proper cleanup"
+    },
+    {
+      "component": "CaseStudyGrid",
+      "challenge": "Filtering functionality with smooth transitions",
+      "mitigation": "Use useState for active filter, filter array with .filter() method, CSS transitions for fade effects"
+    },
+    {
+      "component": "StatsCounter",
+      "challenge": "Animated count-up effect when scrolled into view",
+      "mitigation": "Use Intersection Observer API or useEffect with scroll listener, increment state over time"
+    },
+    {
+      "component": "TeamProfiles",
+      "challenge": "Grid layout with modal/expanded view for team member details",
+      "mitigation": "Use useState for selected team member, conditional rendering for modal, proper z-index layering"
+    },
+    {
+      "component": "ContactForm",
+      "challenge": "Multi-step form with validation and state management",
+      "mitigation": "Use useState for form data and current step, validation functions, conditional rendering for steps"
+    },
+    {
+      "component": "ServiceCards",
+      "challenge": "Hover effects and expandable details without layout shift",
+      "mitigation": "Use CSS transforms for hover effects, fixed heights or min-heights, smooth transitions"
+    },
+    {
+      "component": "Footer",
+      "challenge": "Multi-column responsive layout with newsletter form",
+      "mitigation": "CSS Grid for columns, flexbox for mobile stack, form state management with useState"
+    }
+  ],
+  "fixerContext": {
+    "expectedStructure": "Simple Next.js app. Components in components/ folder at root. app/page.tsx imports from ../components/",
+    "importPaths": "Use '../components/ComponentName' from app/page.tsx",
+    "commonIssues": [
+      "Missing 'use client' directive in components with interactivity (useState, onClick, etc.)",
+      "Import path mismatches - ensure '../components/' prefix from app/page.tsx",
+      "Forgetting to export components as default or named exports",
+      "Missing key props in .map() iterations",
+      "Incorrect Next.js Image component usage (missing width/height or fill prop)",
+      "CSS module imports without proper naming",
+      "Event handlers not properly bound or missing preventDefault",
+      "State updates causing unnecessary re-renders",
+      "Missing alt text on images for accessibility",
+      "Hardcoded data that should be in arrays for easier maintenance"
+    ],
+    "buildInstructions": "Create a cohesive multi-page AI agency website where all pages share the same purple/blue gradient design system. Home page should preview services and case studies with links to dedicated pages. About page showcases team with references to their work in portfolio. Services page details offerings with case study examples. Portfolio displays projects with service and team member tags. All pages should have consistent navigation, footer, and CTAs driving to consultation booking. Use modern React patterns, proper TypeScript types, and Next.js 14 app router conventions."
+  }
+}
