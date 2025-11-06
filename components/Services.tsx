@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Services() {
   return (
     <section className="relative py-24 md:py-32 bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden">
